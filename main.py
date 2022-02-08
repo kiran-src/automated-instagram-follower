@@ -1,16 +1,10 @@
-# This is a sample Python script.
+from Instagram import Instagram
+import os
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+EMAIL = "ksetty12@gmail.com"
+PASSW = os.environ.get("INSTA_PASS")
+target = "https://www.instagram.com/selenagomez/"
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+inst = Instagram()
+inst.login(EMAIL, PASSW)
+inst.followers(target)
